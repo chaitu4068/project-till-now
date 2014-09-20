@@ -1,0 +1,22 @@
+import os
+import nltk
+import pylab
+import csv
+import networkx
+import numpy 
+import time
+
+def getEntities():
+ fl = open("moto-tweet+timestamp.csv","r")
+ x=object()
+ tweet = ''
+ for line in fl:
+  x=line.split(",") 
+  tweet = x[1]
+  tweet = tweet.split(" ") 
+  #print tweet
+  for item in tweet :
+    if item.startswith("#") or item.startswith("@"):
+        print item
+getEntities()
+
